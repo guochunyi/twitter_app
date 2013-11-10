@@ -1,4 +1,10 @@
 TwitterApp::Application.routes.draw do
+  resources :users
+  match '/signup', to: 'users#new', via:"get"
+  get "home_pages/home"
+  get "home_pages/help"
+  get "home_pages/about"
+  root "home_pages#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
